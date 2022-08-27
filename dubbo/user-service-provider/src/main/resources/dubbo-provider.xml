@@ -18,11 +18,16 @@
     <!--<dubbo:registry address="zookeeper://zookeeper.kingsley.com:2181"/>-->
     <dubbo:registry protocol="zookeeper" address="zookeeper.kingsley.com:2181"/>
 
+    <!-- 元数据配置 -->
+    <dubbo:metadata-report address="zookeeper://zookeeper.kingsley.com:2181" />
+
     <!-- 用dubbo协议在20880端口暴露服务,指定通信规则(通信协议和端口) -->
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.kingsley.study.dubbo.service.UserService" ref="userServiceImpl"/>
+
+    <dubbo:service interface="com.kingsley.study.dubbo.service.MemberInfoService" ref="memberInfoServiceImpl"/>
 
     <context:component-scan base-package="com.kingsley.study.dubbo.service"/>
 
