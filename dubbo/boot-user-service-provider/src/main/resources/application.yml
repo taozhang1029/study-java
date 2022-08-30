@@ -1,0 +1,24 @@
+dubbo:
+  application:
+    name: boot-user-service-provider
+    parameters:
+      qos:
+        enable: true
+        port: 22223
+        accept:
+          foreign:
+            ip: true
+
+  registry:
+    address: zookeeper.kingsley.com:2181
+    protocol: zookeeper
+
+  protocol:
+    name: dubbo
+    port: 20880
+
+  metadata-report:
+    address: zookeeper://zookeeper.kingsley.com:2181
+spring:
+  main:
+    allow-bean-definition-overriding: true
