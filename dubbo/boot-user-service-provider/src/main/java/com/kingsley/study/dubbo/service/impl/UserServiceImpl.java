@@ -15,15 +15,20 @@ import java.util.List;
  * @desc
  */
 @Slf4j
-@Service
+@Service(timeout = 800)
 @Component
 public class UserServiceImpl implements UserService {
 
     public List<UserAddress> getUserAddressList(String uerId) {
         log.info("RPC调用开始...");
+        try {
+            Thread.sleep(600);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return Arrays.asList(
-                new UserAddress(1L, "北京市大兴区", "100179", "张三", "13166666666", "Y"),
-                new UserAddress(2L, "北京市海淀区", "100179", "张三", "13166666666", "N")
+                new UserAddress(1L, "北京市大兴区", uerId, "张三", "13166666666", "Y"),
+                new UserAddress(2L, "北京市海淀区", uerId, "张三", "13166666666", "N")
         );
     }
 

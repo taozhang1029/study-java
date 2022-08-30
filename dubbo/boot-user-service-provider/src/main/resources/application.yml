@@ -1,3 +1,4 @@
+# 配置参数优先级：jvm参数 > xml配置 > application.yml / application.properties
 dubbo:
   application:
     name: boot-user-service-provider
@@ -15,7 +16,7 @@ dubbo:
 
   protocol:
     name: dubbo
-    port: 20880
+    port: 20881
 
   metadata-report:
     address: zookeeper://zookeeper.kingsley.com:2181

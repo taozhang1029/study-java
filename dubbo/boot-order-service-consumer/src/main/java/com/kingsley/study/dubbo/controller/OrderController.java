@@ -20,7 +20,10 @@ import java.util.List;
 @RequestMapping("/api/order")
 public class OrderController {
 
-    @Reference
+    /**
+     * 超时时间默认1秒
+     */
+    @Reference(timeout = 300, retries = 3)
     private UserService userService;
 
     @GetMapping("/init")
