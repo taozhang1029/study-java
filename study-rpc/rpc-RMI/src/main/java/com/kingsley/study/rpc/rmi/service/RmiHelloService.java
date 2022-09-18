@@ -8,7 +8,7 @@ import java.rmi.RemoteException;
  * @time 2022/9/14 00:43
  * @desc
  */
-public interface HelloService extends Remote {
+public interface RmiHelloService extends Remote {
 
     String sayHello(String username) throws RemoteException;
 

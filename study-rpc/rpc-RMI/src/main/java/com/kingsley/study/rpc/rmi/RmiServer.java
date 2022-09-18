@@ -1,15 +1,13 @@
 package com.kingsley.study.rpc.rmi;
 
-import com.kingsley.study.rpc.rmi.service.HelloService;
-import com.kingsley.study.rpc.rmi.service.impl.HelloServiceImpl;
+import com.kingsley.study.rpc.rmi.service.RmiHelloService;
+import com.kingsley.study.rpc.rmi.service.impl.RmiHelloServiceImpl;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.rmi.AlreadyBoundException;
 import java.rmi.Naming;
-import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.RMISocketFactory;
 
@@ -21,7 +19,7 @@ import java.rmi.server.RMISocketFactory;
 public class RmiServer {
 
     public static void main(String[] args) throws IOException, AlreadyBoundException {
-        HelloService helloService = new HelloServiceImpl();
+        RmiHelloService helloService = new RmiHelloServiceImpl();
         LocateRegistry.createRegistry(8801);
         // 指定通信端口，防止被防火墙拦截
         RMISocketFactory.setSocketFactory(new RMISocketFactory() {

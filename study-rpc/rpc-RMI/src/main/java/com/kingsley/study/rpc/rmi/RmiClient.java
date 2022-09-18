@@ -1,6 +1,6 @@
 package com.kingsley.study.rpc.rmi;
 
-import com.kingsley.study.rpc.rmi.service.HelloService;
+import com.kingsley.study.rpc.rmi.service.RmiHelloService;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -15,7 +15,7 @@ import java.rmi.RemoteException;
 public class RmiClient {
 
     public static void main(String[] args) throws RemoteException, NotBoundException, MalformedURLException {
-        HelloService helloService = (HelloService) Naming.lookup("rmi://localhost:8801/helloService");
+        RmiHelloService helloService = (RmiHelloService) Naming.lookup("rmi://localhost:8801/helloService");
         System.out.println("RMI远程过程调用结果：" + helloService.sayHello("kingsley"));
     }
 
