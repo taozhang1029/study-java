@@ -14,6 +14,8 @@
         <module>common-interface</module>
         <module>rpc-axis2</module>
         <module>rpc-thrift</module>
+        <module>rpc-grpc</module>
+        <module>rpc-custom</module>
     </modules>
 
     <properties>
